@@ -1,0 +1,122 @@
+<p id="notice"><%= notice %></p>
+
+<%= form_for nutrition_data_path, :method =>'get' do %>
+    <%= text_field_tag :food_item, params[:food_item]%>
+    <%= submit_tag "Search" %>
+<% end %>
+<% if @nutrition_data.present? %>
+    <%= render @nutrition_data %>
+
+<% else %>
+    <% link_to %>
+<% end %>
+
+<h1>Listing Nutrition Data</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Food ID</th>
+      <th>Source</th>
+      <th>Food item</th>
+      <th>Edible part percentage</th>
+      <th>Water g</th>
+      <th>Kilojoules kj</th>
+      <th>Kilocalories kcal</th>
+      <th>Fat g</th>
+      <th>Sat fa g</th>
+      <th>Trans fa g</th>
+      <th>Mu fa g</th>
+      <th>Pu fa g</th>
+      <th>Cholesterol mg</th>
+      <th>Carbo g</th>
+      <th>Starch g</th>
+      <th>Mono di g</th>
+      <th>Sugar g</th>
+      <th>Dietary fibre</th>
+      <th>Protein g</th>
+      <th>Salt g</th>
+      <th>Alcohol g</th>
+      <th>Retinol mg</th>
+      <th>Beta carotene mg</th>
+      <th>Vitamin a are</th>
+      <th>Vitamin d mg</th>
+      <th>Vitamin e alfa te</th>
+      <th>Thiamin mg</th>
+      <th>Riboflavin mg</th>
+      <th>Niacin mg</th>
+      <th>Vitamin b6 mg</th>
+      <th>Folate mg</th>
+      <th>Vitamin b12 mg</th>
+      <th>Vitamin c mg</th>
+      <th>Calcium mg</th>
+      <th>Iron mg</th>
+      <th>Sodium mg</th>
+      <th>Potassium mg</th>
+      <th>Magnesium mg</th>
+      <th>Zinc mg</th>
+      <th>Selenium mg</th>
+      <th>Copper mg</th>
+      <th>Phosphorus mg</th>
+      <th>Iodine mg</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @nutrition_datum.each do |nutrition_datum| %>
+      <tr>
+        <td><%= nutrition_datum.food_id %></td>
+        <td><%= nutrition_datum.source %></td>
+        <td><%= nutrition_datum.food_item %></td>
+        <td><%= nutrition_datum.edible_part_percentage %></td>
+        <td><%= nutrition_datum.water_g %></td>
+        <td><%= nutrition_datum.kilojoules_kj %></td>
+        <td><%= nutrition_datum.kilocalories_kcal %></td>
+        <td><%= nutrition_datum.fat_g %></td>
+        <td><%= nutrition_datum.sat_fa_g %></td>
+        <td><%= nutrition_datum.trans_fa_g %></td>
+        <td><%= nutrition_datum.mu_fa_g %></td>
+        <td><%= nutrition_datum.pu_fa_g %></td>
+        <td><%= nutrition_datum.cholesterol_mg %></td>
+        <td><%= nutrition_datum.carbo_g %></td>
+        <td><%= nutrition_datum.starch_g %></td>
+        <td><%= nutrition_datum.mono_di_g %></td>
+        <td><%= nutrition_datum.sugar_g %></td>
+        <td><%= nutrition_datum.dietary_fibre %></td>
+        <td><%= nutrition_datum.protein_g %></td>
+        <td><%= nutrition_datum.salt_g %></td>
+        <td><%= nutrition_datum.alcohol_g %></td>
+        <td><%= nutrition_datum.retinol_mg %></td>
+        <td><%= nutrition_datum.beta_carotene_mg %></td>
+        <td><%= nutrition_datum.vitamin_a_are %></td>
+        <td><%= nutrition_datum.vitamin_d_mg %></td>
+        <td><%= nutrition_datum.vitamin_e_alfa_te %></td>
+        <td><%= nutrition_datum.thiamin_mg %></td>
+        <td><%= nutrition_datum.riboflavin_mg %></td>
+        <td><%= nutrition_datum.niacin_mg %></td>
+        <td><%= nutrition_datum.vitamin_b6_mg %></td>
+        <td><%= nutrition_datum.folate_mg %></td>
+        <td><%= nutrition_datum.vitamin_b12_mg %></td>
+        <td><%= nutrition_datum.vitamin_c_mg %></td>
+        <td><%= nutrition_datum.calcium_mg %></td>
+        <td><%= nutrition_datum.iron_mg %></td>
+        <td><%= nutrition_datum.sodium_mg %></td>
+        <td><%= nutrition_datum.potassium_mg %></td>
+        <td><%= nutrition_datum.magnesium_mg %></td>
+        <td><%= nutrition_datum.zinc_mg %></td>
+        <td><%= nutrition_datum.selenium_mg %></td>
+        <td><%= nutrition_datum.copper_mg %></td>
+        <td><%= nutrition_datum.phosphorus_mg %></td>
+        <td><%= nutrition_datum.iodine_mg %></td>
+        <td><%= link_to 'Show', nutrition_datum %></td>
+        <td><%= link_to 'Edit', edit_nutrition_datum_path(nutrition_datum) %></td>
+        <td><%= link_to 'Destroy', nutrition_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Nutrition datum', new_nutrition_datum_path %>
