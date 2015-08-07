@@ -11,10 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150805163621) do
+ActiveRecord::Schema.define(version: 20150807163405) do
 
   create_table "nutrition_data", force: :cascade do |t|
-    t.string   "food_id"
     t.string   "source"
     t.string   "food_item"
     t.string   "edible_part_percentage"

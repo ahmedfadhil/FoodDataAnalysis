@@ -1,7 +1,7 @@
 class CreateNutritionData < ActiveRecord::Migration
   def change
     create_table :nutrition_data do |t|
-      t.string :food_id
+
       t.string :source
       t.string :food_item
       t.string :edible_part_percentage

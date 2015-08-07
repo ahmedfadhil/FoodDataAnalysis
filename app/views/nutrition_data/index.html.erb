@@ -53,7 +53,7 @@
   <table id="foods" class="display">
     <thead class="tg">
     <tr>
-      <th>Food ID</th>
+
       <th>Source</th>
       <th>Food item</th>
       <th>Edible part percentage</th>
@@ -103,7 +103,7 @@
     <tbody>
     <% @nutrition_datum.each do |nutrition_datum| %>
         <tr>
-          <td><%= nutrition_datum.food_id %></td>
+
           <td><%= nutrition_datum.source %></td>
           <td><%= nutrition_datum.food_item %></td>
           <td><%= nutrition_datum.edible_part_percentage %></td>
